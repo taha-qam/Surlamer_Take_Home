@@ -11,6 +11,7 @@ import { useGainersLosers, useMarketStatus, useMarketNews } from '../hooks/useMa
 import { extractPrice } from '../services/market';
 import { fmtPrice, fmtPct, changeColor, changeBg, timeAgo } from '../api/format';
 import { ErrorBoundary } from '../error/ErrorBoundary';
+import surlamerLogo from '../assets/surlamer-logo.svg';
 
 export function LandingPage() {
   const navigate = useNavigate();
@@ -29,7 +30,7 @@ export function LandingPage() {
       <header style={navBar}>
         <nav style={navInner} aria-label="Site navigation">
           <a href="/" style={logoGroup} aria-label="Surlamer Research home">
-            <span style={logoMark} aria-hidden>S</span>
+            <img src={surlamerLogo} alt="" aria-hidden style={logoMark} />
             <span style={logoText}>Surlamer</span>
             <span style={logoText}>Investments</span>
             <span style={logoSub}>Equity Research</span>
@@ -219,7 +220,7 @@ export function LandingPage() {
         <div style={container}>
           <p style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12, margin: 0 }}>
             <span style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-              <span style={logoMark} aria-hidden>S</span>
+              <img src={surlamerLogo} alt="" aria-hidden style={logoMark} />
               <span style={{ fontFamily: 'var(--font-serif)', color: 'var(--text-3)', fontSize: 13 }}>
                 Surlamer Research · Equity Workbench
               </span>
@@ -270,7 +271,7 @@ const page: React.CSSProperties = { minHeight: '100vh', background: 'var(--surfa
 const navBar: React.CSSProperties = { borderBottom: '1px solid var(--border)', background: 'rgba(13,17,23,0.95)', backdropFilter: 'blur(12px)', position: 'sticky', top: 0, zIndex: 50 };
 const navInner: React.CSSProperties = { maxWidth: 1200, margin: '0 auto', padding: '0 24px', height: 56, display: 'flex', alignItems: 'center', justifyContent: 'space-between' };
 const logoGroup: React.CSSProperties = { display: 'flex', alignItems: 'center', gap: 8, textDecoration: 'none' };
-const logoMark: React.CSSProperties = { width: 28, height: 28, background: 'var(--gold)', borderRadius: 6, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontSize: 14, fontWeight: 800, fontFamily: 'var(--font-serif)' };
+const logoMark: React.CSSProperties = { width: 28, height: 28, objectFit: 'contain', display: 'block', borderRadius: 6, flexShrink: 0 };
 const logoText: React.CSSProperties = { fontFamily: 'var(--font-serif)', fontSize: 17, fontWeight: 700, color: 'var(--text)' };
 const logoSub: React.CSSProperties = { fontSize: 11, color: 'var(--text-3)', letterSpacing: '0.08em', textTransform: 'uppercase', marginLeft: -2 };
 const launchBtn: React.CSSProperties = { display: 'flex', alignItems: 'center', gap: 6, background: 'var(--gold)', color: '#000', border: 'none', padding: '8px 16px', borderRadius: 8, fontWeight: 600, fontSize: 13, cursor: 'pointer' };

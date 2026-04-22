@@ -110,14 +110,14 @@ const tickerLabel: React.CSSProperties = {
   fontFamily: 'var(--font-mono)',
   fontWeight: 500,
   fontSize: 14,
-  color: 'var(--text)',
+  color: 'var(--text-4)',
   letterSpacing: '0.03em',
 };
 
 const nameLabel: React.CSSProperties = {
   margin: '2px 0 0',
   fontSize: 11,
-  color: 'var(--text-3)',
+  color: 'var(--text-4)',
   whiteSpace: 'nowrap',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
@@ -135,7 +135,7 @@ const priceText: React.CSSProperties = {
   fontFamily: 'var(--font-mono)',
   fontSize: 18,
   fontWeight: 500,
-  color: 'var(--text)',
+  color: 'var(--text-4)',
 };
 
 const metaRow: React.CSSProperties = { padding: 0 };
@@ -149,7 +149,7 @@ const metaItem: React.CSSProperties = {
 const metaLabel: React.CSSProperties = {
   fontSize: 9,
   letterSpacing: '0.08em',
-  color: 'var(--text-3)',
+  color: 'var(--text-4)',
   fontWeight: 500,
   textTransform: 'uppercase' as const,
 };
@@ -158,7 +158,7 @@ function portfolioBtn(active: boolean): React.CSSProperties {
   return {
     background: active ? 'var(--gold-dim)' : 'var(--surface-3)',
     border: `1px solid ${active ? 'var(--gold)' : 'var(--border)'}`,
-    color: active ? 'var(--gold)' : 'var(--text-3)',
+    color: active ? 'var(--gold)' : 'var(--text-4)',
     borderRadius: 6,
     width: 26,
     height: 26,

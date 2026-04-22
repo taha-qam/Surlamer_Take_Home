@@ -1,6 +1,6 @@
 // Set up API Key and base URL from environment variables
-const API_KEY = import.meta.env.VITE_MASSIVE_API_KEY as string;
-const BASE = 'https://api.massive.com';
+const API_KEY = (import.meta.env.VITE_MASSIVE_API_KEY ?? '').trim();
+const BASE = (import.meta.env.VITE_MASSIVE_BASE_URL ?? 'https://api.massive.com').trim();
 
 // ─── Domain error type ────────────────────────────────────────────────────────
 
@@ -81,6 +81,12 @@ export interface MarketStatus {
 // HTTP client 
 
 async function get<T>(path: string, params: Record<string, string> = {}): Promise<T> {
+  if (!API_KEY) {
+    throw new ApiError(
+      403,
+      'Massive API key is missing. Set VITE_MASSIVE_API_KEY in .env and restart dev server.',
+    );
+  }
   const url = new URL(`${BASE}${path}`);
   url.searchParams.set('apiKey', API_KEY);
   for (const [k, v] of Object.entries(params)) url.searchParams.set(k, v);

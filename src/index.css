@@ -3,27 +3,27 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --ink: #d1e0f1;
-  --ink-2: #2596be;
-  --surface: #d1e0f1;
-  --surface-2: #175ea1;
-  --surface-3: #21262d;
-  --border: #30363d;
-  --border-2: #3d444d;
-  --muted: #7d8590;
-  --text: #2c517d;
-  --text-2: #b1bac4;
-  --text-3: #cab3b5;
-  --text-4: #ffffff;
-  --gold: #de7e17;
-  --gold-2: #f0c84a;
-  --gold-dim: rgba(212,169,41,0.15);
-  --gold-dim2: rgba(212,169,41,0.08);
-  --green: #3fb950;
-  --green-dim: rgba(63,185,80,0.12);
-  --red: #f85149;
-  --red-dim: rgba(248,81,73,0.12);
-  --blue: #58a6ff;
+  --ink: #0a1422;
+  --ink-2: #0f2036;
+  --surface: #d7e6f5;
+  --surface-2: #122844;
+  --surface-3: #1a3559;
+  --border: rgba(132, 160, 191, 0.26);
+  --border-2: rgba(132, 160, 191, 0.38);
+  --muted: #6f88a7;
+  --text: #163557;
+  --text-2: #aac2dd;
+  --text-3: #6d87a8;
+  --text-4: #edf5ff;
+  --gold: #3f6397;
+  --gold-2: #88a9d3;
+  --gold-dim: rgba(63,99,151,0.18);
+  --gold-dim2: rgba(63,99,151,0.10);
+  --green: #3fa974;
+  --green-dim: rgba(69,185,131,0.16);
+  --red: #df6767;
+  --red-dim: rgba(239,107,107,0.16);
+  --blue: #8ab7ea;
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-mono: 'JetBrains Mono', 'Courier New', monospace;
   --font-sans: 'DM Sans', system-ui, sans-serif;

@@ -22,6 +22,7 @@ import { TickerDetail } from '../components/TickerDetail';
 import { MiniChart } from '../components/MiniChart';
 import { PortfolioNewsPanel } from '../components/PortfolioNewsPanel';
 import { ErrorBoundary } from '../error/ErrorBoundary';
+import surlamerLogo from '../assets/surlamer-logo.svg';
 
 const BROWSE_BATCH = POPULAR_TICKERS.slice(0, 24);
 
@@ -97,7 +98,7 @@ export function WorkbenchPage() {
             <ArrowLeft size={14} aria-hidden /> Back
           </button>
           <a href="/" style={{ ...logoArea, textDecoration: 'none' }} aria-label="Surlamer Research home">
-            <span style={logoMark} aria-hidden>S</span>
+            <img src={surlamerLogo} alt="" aria-hidden style={logoMark} />
             <span>
               <span style={logoName}>Surlamer</span>
               <span style={logoLabel}>Equity Workbench</span>
@@ -423,59 +424,59 @@ function EmptyState({ title, sub }: { title: string; sub: string }) {
 
 // ─── Styles ───────────────────────────────────────────────────────────────────
 
-const shell: React.CSSProperties = { display: 'flex', height: '100vh', overflow: 'hidden', background: 'var(--surface)' };
-const sidebar: React.CSSProperties = { width: 220, flexShrink: 0, borderRight: '1px solid var(--border)', background: 'var(--surface-2)', display: 'flex', flexDirection: 'column', overflow: 'auto' };
+const shell: React.CSSProperties = { display: 'flex', height: '100vh', overflow: 'hidden', background: '#0e1f35' };
+const sidebar: React.CSSProperties = { width: 220, flexShrink: 0, borderRight: '1px solid rgba(98, 130, 167, 0.35)', background: '#101f34', display: 'flex', flexDirection: 'column', overflow: 'auto' };
 const sideTop: React.CSSProperties = { padding: '16px 16px 12px' };
-const backBtn: React.CSSProperties = { display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, color: 'var(--text-3)', background: 'transparent', border: 'none', padding: '4px 0', marginBottom: 16, cursor: 'pointer' };
+const backBtn: React.CSSProperties = { display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, color: '#9ab2cd', background: 'transparent', border: 'none', padding: '4px 0', marginBottom: 16, cursor: 'pointer' };
 const logoArea: React.CSSProperties = { display: 'flex', alignItems: 'center', gap: 10 };
-const logoMark: React.CSSProperties = { width: 30, height: 30, background: 'var(--gold)', borderRadius: 7, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontSize: 15, fontWeight: 800, fontFamily: 'var(--font-serif)', flexShrink: 0 };
-const logoName: React.CSSProperties = { fontFamily: 'var(--font-serif)', fontSize: 15, fontWeight: 700, color: 'var(--text)', lineHeight: 1.2, display: 'block' };
-const logoLabel: React.CSSProperties = { fontSize: 10, color: 'var(--text-3)', letterSpacing: '0.06em', display: 'block' };
-const sideNav: React.CSSProperties = { padding: '8px 12px', display: 'flex', flexDirection: 'column', gap: 2, borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' };
+const logoMark: React.CSSProperties = { width: 30, height: 30, objectFit: 'contain', display: 'block', borderRadius: 7, flexShrink: 0 };
+const logoName: React.CSSProperties = { fontFamily: 'var(--font-serif)', fontSize: 15, fontWeight: 700, color: '#e8f1fb', lineHeight: 1.2, display: 'block' };
+const logoLabel: React.CSSProperties = { fontSize: 10, color: '#88a4c4', letterSpacing: '0.06em', display: 'block' };
+const sideNav: React.CSSProperties = { padding: '8px 12px', display: 'flex', flexDirection: 'column', gap: 2, borderTop: '1px solid rgba(98, 130, 167, 0.3)', borderBottom: '1px solid rgba(98, 130, 167, 0.3)' };
 const navItem = (active: boolean): React.CSSProperties => ({
   display: 'flex', alignItems: 'center', gap: 9, padding: '8px 10px', borderRadius: 8, fontSize: 13,
-  fontWeight: active ? 600 : 400, color: active ? 'var(--text)' : 'var(--text-3)',
-  background: active ? 'var(--surface-3)' : 'transparent', border: 'none',
+  fontWeight: active ? 600 : 400, color: active ? '#e8f1fb' : '#9ab2cd',
+  background: active ? '#1b3456' : 'transparent', border: 'none',
   transition: 'all 0.15s', cursor: 'pointer', textAlign: 'left',
 });
 const badge: React.CSSProperties = { marginLeft: 'auto', background: 'var(--gold)', color: '#000', fontSize: 10, fontWeight: 700, padding: '1px 6px', borderRadius: 10 };
-const sidePortfolioCard: React.CSSProperties = { margin: '12px', background: 'var(--surface-3)', border: '1px solid var(--border)', borderRadius: 10, padding: '12px' };
-const sidePortfolioLabel: React.CSSProperties = { fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-3)', fontWeight: 600, margin: 0 };
+const sidePortfolioCard: React.CSSProperties = { margin: '12px', background: '#152844', border: '1px solid rgba(98, 130, 167, 0.35)', borderRadius: 10, padding: '12px' };
+const sidePortfolioLabel: React.CSSProperties = { fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#88a4c4', fontWeight: 600, margin: 0 };
 const sidePortfolioRow: React.CSSProperties = { display: 'flex', justifyContent: 'space-between', padding: '4px 6px', borderRadius: 5, cursor: 'pointer', width: '100%', background: 'transparent', border: 'none' };
 const viewPortfolioBtn: React.CSSProperties = { display: 'flex', alignItems: 'center', gap: 4, fontSize: 11, color: 'var(--gold)', background: 'transparent', border: 'none', cursor: 'pointer', marginTop: 8, padding: '4px 6px' };
 
-const mainArea: React.CSSProperties = { flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' };
-const topbar: React.CSSProperties = { padding: '12px 20px', borderBottom: '1px solid var(--border)', display: 'flex', alignItems: 'center', gap: 10, background: 'var(--surface-2)', flexShrink: 0 };
-const searchBox: React.CSSProperties = { display: 'flex', alignItems: 'center', gap: 8, flex: 1, background: 'var(--surface-3)', border: '1px solid var(--border)', borderRadius: 9, padding: '0 12px', height: 38, cursor: 'text' };
-const searchInput: React.CSSProperties = { flex: 1, background: 'transparent', border: 'none', outline: 'none', fontSize: 13, color: 'var(--text)', fontFamily: 'var(--font-sans)' };
-const clearBtn: React.CSSProperties = { background: 'transparent', border: 'none', color: 'var(--text-3)', display: 'flex', alignItems: 'center', cursor: 'pointer', padding: 2 };
-const refreshBtn: React.CSSProperties = { background: 'var(--surface-3)', border: '1px solid var(--border)', color: 'var(--text-3)', borderRadius: 8, width: 38, height: 38, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' };
+const mainArea: React.CSSProperties = { flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden', background: '#0e1f35' };
+const topbar: React.CSSProperties = { padding: '12px 20px', borderBottom: '1px solid rgba(98, 130, 167, 0.35)', display: 'flex', alignItems: 'center', gap: 10, background: '#101f34', flexShrink: 0 };
+const searchBox: React.CSSProperties = { display: 'flex', alignItems: 'center', gap: 8, flex: 1, background: '#152844', border: '1px solid rgba(98, 130, 167, 0.34)', borderRadius: 9, padding: '0 12px', height: 38, cursor: 'text' };
+const searchInput: React.CSSProperties = { flex: 1, background: 'transparent', border: 'none', outline: 'none', fontSize: 13, color: '#dce9f7', fontFamily: 'var(--font-sans)' };
+const clearBtn: React.CSSProperties = { background: 'transparent', border: 'none', color: '#9ab2cd', display: 'flex', alignItems: 'center', cursor: 'pointer', padding: 2 };
+const refreshBtn: React.CSSProperties = { background: '#152844', border: '1px solid rgba(98, 130, 167, 0.34)', color: '#bfd3ea', borderRadius: 8, width: 38, height: 38, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' };
 
 const content: React.CSSProperties = { flex: 1, overflow: 'auto', padding: '20px 20px' };
 const pageTitleRow: React.CSSProperties = { display: 'flex', alignItems: 'baseline', gap: 12, marginBottom: 18 };
-const pageTitle: React.CSSProperties = { fontFamily: 'var(--font-serif)', fontSize: 20, fontWeight: 600, color: 'var(--text)', marginBottom: 16, marginTop: 0 };
+const pageTitle: React.CSSProperties = { fontFamily: 'var(--font-serif)', fontSize: 20, fontWeight: 600, color: '#eef5ff', marginBottom: 16, marginTop: 0 };
 const cardGrid: React.CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(192px, 1fr))', gap: 12 };
-const searchResultCard: React.CSSProperties = { background: 'var(--surface-2)', border: '1px solid var(--border)', borderRadius: 12, padding: '14px 16px', cursor: 'pointer', transition: 'border-color 0.15s' };
+const searchResultCard: React.CSSProperties = { background: '#152844', border: '1px solid rgba(98, 130, 167, 0.34)', borderRadius: 12, padding: '14px 16px', cursor: 'pointer', transition: 'border-color 0.15s' };
 
 // Portfolio
-const portfolioSummaryBar: React.CSSProperties = { display: 'flex', alignItems: 'center', background: 'var(--surface-2)', border: '1px solid var(--border)', borderRadius: 10, marginBottom: 20, overflow: 'hidden' };
+const portfolioSummaryBar: React.CSSProperties = { display: 'flex', alignItems: 'center', background: '#152844', border: '1px solid rgba(98, 130, 167, 0.34)', borderRadius: 10, marginBottom: 20, overflow: 'hidden' };
 const summaryItem: React.CSSProperties = { padding: '14px 24px', flex: 1 };
-const summaryLabel: React.CSSProperties = { fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-3)', fontWeight: 600, marginBottom: 4 };
-const summaryValue: React.CSSProperties = { fontFamily: 'var(--font-mono)', fontSize: 18, fontWeight: 500, color: 'var(--text)' };
-const summaryDivider: React.CSSProperties = { width: 1, background: 'var(--border)', alignSelf: 'stretch', display: 'block' };
+const summaryLabel: React.CSSProperties = { fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#88a4c4', fontWeight: 600, marginBottom: 4 };
+const summaryValue: React.CSSProperties = { fontFamily: 'var(--font-mono)', fontSize: 18, fontWeight: 500, color: '#e8f1fb' };
+const summaryDivider: React.CSSProperties = { width: 1, background: 'rgba(98, 130, 167, 0.28)', alignSelf: 'stretch', display: 'block' };
 
-const portfolioTableWrap: React.CSSProperties = { background: 'var(--surface-2)', border: '1px solid var(--border)', borderRadius: 10, overflow: 'hidden', marginBottom: 20 };
+const portfolioTableWrap: React.CSSProperties = { background: '#152844', border: '1px solid rgba(98, 130, 167, 0.34)', borderRadius: 10, overflow: 'hidden', marginBottom: 20 };
 const portfolioTable: React.CSSProperties = { width: '100%', borderCollapse: 'collapse' };
-const thCell: React.CSSProperties = { padding: '10px 16px', fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-3)', fontWeight: 600, background: 'var(--surface-3)', borderBottom: '1px solid var(--border)', textAlign: 'left' };
-const tableRow: React.CSSProperties = { cursor: 'pointer', transition: 'background 0.15s', borderBottom: '1px solid var(--border)' };
+const thCell: React.CSSProperties = { padding: '10px 16px', fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#9ab2cd', fontWeight: 600, background: '#1b3456', borderBottom: '1px solid rgba(98, 130, 167, 0.28)', textAlign: 'left' };
+const tableRow: React.CSSProperties = { cursor: 'pointer', transition: 'background 0.15s', borderBottom: '1px solid rgba(98, 130, 167, 0.2)' };
 const tdTicker: React.CSSProperties = { padding: '12px 16px', verticalAlign: 'middle' };
 const tdCell: React.CSSProperties = { padding: '12px 16px', verticalAlign: 'middle' };
 const iconBtn: React.CSSProperties = { background: 'transparent', border: 'none', cursor: 'pointer', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: 5, borderRadius: 5 };
 
-const notesEditorCell: React.CSSProperties = { padding: '0 16px 12px', borderBottom: '1px solid var(--border)' };
-const notesTextarea: React.CSSProperties = { width: '100%', background: 'var(--surface-3)', border: '1px solid var(--border)', borderRadius: 6, padding: '8px 10px', fontSize: 12, color: 'var(--text)', fontFamily: 'var(--font-sans)', resize: 'none', outline: 'none', lineHeight: 1.5, marginTop: 8 };
-const notesCancelBtn: React.CSSProperties = { fontSize: 12, padding: '5px 12px', borderRadius: 6, border: '1px solid var(--border)', background: 'transparent', color: 'var(--text-3)', cursor: 'pointer' };
+const notesEditorCell: React.CSSProperties = { padding: '0 16px 12px', borderBottom: '1px solid rgba(98, 130, 167, 0.2)' };
+const notesTextarea: React.CSSProperties = { width: '100%', background: '#1b3456', border: '1px solid rgba(98, 130, 167, 0.3)', borderRadius: 6, padding: '8px 10px', fontSize: 12, color: '#e6f0fb', fontFamily: 'var(--font-sans)', resize: 'none', outline: 'none', lineHeight: 1.5, marginTop: 8 };
+const notesCancelBtn: React.CSSProperties = { fontSize: 12, padding: '5px 12px', borderRadius: 6, border: '1px solid rgba(98, 130, 167, 0.3)', background: 'transparent', color: '#bfd3ea', cursor: 'pointer' };
 const notesSaveBtn: React.CSSProperties = { fontSize: 12, padding: '5px 12px', borderRadius: 6, border: 'none', background: 'var(--gold)', color: '#000', fontWeight: 600, cursor: 'pointer' };
-const notesDisplayCell: React.CSSProperties = { display: 'flex', gap: 8, alignItems: 'flex-start', padding: '8px 16px 10px', borderBottom: '1px solid var(--border)', fontSize: 12, color: 'var(--text-3)', background: 'var(--gold-dim2)', cursor: 'pointer', lineHeight: 1.5 };
+const notesDisplayCell: React.CSSProperties = { display: 'flex', gap: 8, alignItems: 'flex-start', padding: '8px 16px 10px', borderBottom: '1px solid rgba(98, 130, 167, 0.2)', fontSize: 12, color: '#bfd3ea', background: 'rgba(63,99,151,0.2)', cursor: 'pointer', lineHeight: 1.5 };
 
 const goToBrowseBtn: React.CSSProperties = { background: 'var(--gold)', color: '#000', border: 'none', padding: '10px 20px', borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: 'pointer', marginTop: 8 };
