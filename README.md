@@ -36,3 +36,9 @@ UI: CSS in JS style objects since it is what I have used before, avoids dealing 
 ### 5. **Stock History**: I had the past 90 days showing for a stock, as well as recent news about it and other detailed information, but I didn't set anything up to see beyond a stock's 90 day performance (for example, performance for the year, past 5 years, etc) since I was busy figuring out frontend
 
 ### 6. **Portfolio History**: The portfolio could have shown more than the day's gains/losses. For example, one should be able to see their losses/gains in the last 90 days, etc. With more time to code and read Massive Docs, I'd be able to easily implement it, but my main priority was making sure the code that I do have is clean, rather than bloating a project full of code smells with features
+
+### 7. **Export to CSV**: Would add a feature to export Portfolio to CSV, making it easy to compare user portfolios for data analysis, etc
+
+### 8. **Polling for Price Alerts**: Could poll Massive API, checking for price updates on certain stocks, sending user notifications when a stock hits a certain price. Would help users spend more time on the app instead of forgetting about it, and mean users don't have to constantly check stock prices
+
+Accidentally put README.md in .gitignore and only noticed it now a little while after finishing
