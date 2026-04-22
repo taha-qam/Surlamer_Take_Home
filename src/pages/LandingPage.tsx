@@ -31,7 +31,8 @@ export function LandingPage() {
           <a href="/" style={logoGroup} aria-label="Surlamer Research home">
             <span style={logoMark} aria-hidden>S</span>
             <span style={logoText}>Surlamer</span>
-            <span style={logoSub}>Research</span>
+            <span style={logoText}>Investments</span>
+            <span style={logoSub}>Equity Research</span>
           </a>
 
           <menu style={{ display: 'flex', alignItems: 'center', gap: 16, margin: 0, padding: 0, listStyle: 'none' }}>
@@ -107,7 +108,7 @@ export function LandingPage() {
         <section style={sectionStyle} aria-labelledby="movers-heading">
           <div style={container}>
             <hgroup style={sectionHead}>
-              <h2 id="movers-heading" style={sectionTitle}>Today's Movers</h2>
+              <h2 id="movers-heading" style={sectionTitleLightBG}>Today's Movers</h2>
               <p style={sectionSub}>Live market data · refreshed every 2 minutes</p>
             </hgroup>
             <ErrorBoundary>
@@ -137,7 +138,7 @@ export function LandingPage() {
         >
           <div style={container}>
             <hgroup style={sectionHead}>
-              <h2 id="features-heading" style={sectionTitle}>Built for Research</h2>
+              <h2 id="features-heading" style={sectionTitleDarkBG}>Built for Research</h2>
               <p style={sectionSub}>Everything you need to do thorough equity research</p>
             </hgroup>
             <ul style={{ ...featGrid, listStyle: 'none', padding: 0, margin: 0 }}>
@@ -162,7 +163,7 @@ export function LandingPage() {
           <section style={sectionStyle} aria-labelledby="news-heading">
             <div style={container}>
               <hgroup style={sectionHead}>
-                <h2 id="news-heading" style={sectionTitle}>Market News</h2>
+                <h2 id="news-heading" style={sectionTitleLightBG}>Market News</h2>
               </hgroup>
               <ul style={{ ...newsGrid, listStyle: 'none', padding: 0, margin: 0 }}>
                 {news.map((item) => (
@@ -286,7 +287,8 @@ const tickerItem: React.CSSProperties = { display: 'flex', alignItems: 'center',
 const sectionStyle: React.CSSProperties = { padding: '64px 24px' };
 const container: React.CSSProperties = { maxWidth: 1200, margin: '0 auto' };
 const sectionHead: React.CSSProperties = { marginBottom: 28 };
-const sectionTitle: React.CSSProperties = { fontFamily: 'var(--font-serif)', fontSize: 24, fontWeight: 600, color: 'var(--text)', marginBottom: 4, marginTop: 0 };
+const sectionTitleLightBG: React.CSSProperties = { fontFamily: 'var(--font-serif)', fontSize: 24, fontWeight: 600, color: 'var(--text)', marginBottom: 4, marginTop: 0 };
+const sectionTitleDarkBG: React.CSSProperties = { fontFamily: 'var(--font-serif)', fontSize: 24, fontWeight: 600, color: 'var(--text-4)', marginBottom: 4, marginTop: 0 };
 const sectionSub: React.CSSProperties = { fontSize: 13, color: 'var(--text-3)', margin: 0 };
 const moversGrid: React.CSSProperties = { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 };
 const moversHeader = (up: boolean): React.CSSProperties => ({ display: 'flex', alignItems: 'center', gap: 6, fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: up ? 'var(--green)' : 'var(--red)', marginBottom: 8, marginTop: 0, padding: '0 12px' });
