@@ -220,12 +220,12 @@ export function TickerDetail({ ticker, onClose }: Props) {
                       <li key={item.id}>
                         <a href={item.article_url} target="_blank" rel="noreferrer" style={newsItem}>
                           <p style={{ display: 'flex', justifyContent: 'space-between', gap: 8, margin: 0 }}>
-                            <span style={{ fontWeight: 500, fontSize: 13, color: 'var(--text)', lineHeight: 1.4, flex: 1 }}>
+                            <span style={{ fontWeight: 500, fontSize: 13, color: 'var(--text-4)', lineHeight: 1.4, flex: 1 }}>
                               {item.title}
                             </span>
                             <ExternalLink size={12} style={{ color: 'var(--text-3)', flexShrink: 0, marginTop: 2 }} aria-hidden />
                           </p>
-                          <p style={{ fontSize: 11, color: 'var(--text-3)', marginTop: 4, marginBottom: 0 }}>
+                          <p style={{ fontSize: 11, color: 'var(--text-4)', marginTop: 4, marginBottom: 0 }}>
                             {item.publisher.name} ·{' '}
                             <time dateTime={item.published_utc}>{timeAgo(item.published_utc)}</time>
                           </p>
@@ -263,9 +263,9 @@ const headerStyle: React.CSSProperties = {
 };
 const tickerH: React.CSSProperties = {
   fontFamily: 'var(--font-mono)', fontSize: 22, fontWeight: 600,
-  color: 'var(--text)', letterSpacing: '0.04em',
+  color: 'var(--text-4)', letterSpacing: '0.04em',
 };
-const nameH: React.CSSProperties = { fontSize: 13, color: 'var(--text-3)', marginTop: 2 };
+const nameH: React.CSSProperties = { fontSize: 13, color: 'var(--text-4)', marginTop: 2 };
 const exchangeBadge: React.CSSProperties = {
   fontSize: 10, background: 'var(--gold-dim2)', color: 'var(--gold)',
   border: '1px solid var(--gold-dim)', borderRadius: 4,
@@ -278,7 +278,7 @@ const priceHero: React.CSSProperties = {
   display: 'flex', alignItems: 'baseline', gap: 14, flexWrap: 'wrap', margin: 0,
 };
 const bigPrice: React.CSSProperties = {
-  fontFamily: 'var(--font-serif)', fontSize: 36, fontWeight: 600, color: 'var(--text)',
+  fontFamily: 'var(--font-serif)', fontSize: 36, fontWeight: 600, color: 'var(--text-4)',
 };
 const sectionLabel: React.CSSProperties = {
   fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.1em',

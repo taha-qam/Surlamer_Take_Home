@@ -156,9 +156,9 @@ const metaLabel: React.CSSProperties = {
 
 function portfolioBtn(active: boolean): React.CSSProperties {
   return {
-    background: active ? 'var(--gold-dim)' : 'var(--surface-3)',
-    border: `1px solid ${active ? 'var(--gold)' : 'var(--border)'}`,
-    color: active ? 'var(--gold)' : 'var(--text-4)',
+    background: active ? 'rgba(237,245,255,0.14)' : 'var(--gold-dim)',
+    border: `1px solid ${active ? 'var(--text-4)' : 'var(--gold)'}`,
+    color: active ? 'var(--text-4)' : 'var(--gold)',
     borderRadius: 6,
     width: 26,
     height: 26,

@@ -31,8 +31,7 @@ export function LandingPage() {
         <nav style={navInner} aria-label="Site navigation">
           <a href="/" style={logoGroup} aria-label="Surlamer Research home">
             <img src={surlamerLogo} alt="" aria-hidden style={logoMark} />
-            <span style={logoText}>Surlamer</span>
-            <span style={logoText}>Investments</span>
+            <span style={logoText}>Surlamer Investments</span>
             <span style={logoSub}>Equity Research</span>
           </a>
 
@@ -182,11 +181,11 @@ export function LandingPage() {
                           </figure>
                         )}
                         <div style={newsBody}>
-                          <p style={{ fontSize: 11, color: 'var(--gold)', fontWeight: 500, marginBottom: 6, marginTop: 0 }}>
+                          <p style={{ fontSize: 11, color: 'var(--text-4)', fontWeight: 500, marginBottom: 6, marginTop: 0 }}>
                             {item.publisher.name}
                           </p>
                           <h3 style={newsTitle}>{item.title}</h3>
-                          <p style={{ fontSize: 11, color: 'var(--text-3)', marginTop: 8, marginBottom: 0 }}>
+                          <p style={{ fontSize: 11, color: '#8fb2d9', marginTop: 8, marginBottom: 0 }}>
                             <time dateTime={item.published_utc}>{timeAgo(item.published_utc)}</time>
                           </p>
                         </div>
@@ -272,7 +271,7 @@ const navBar: React.CSSProperties = { borderBottom: '1px solid var(--border)', b
 const navInner: React.CSSProperties = { maxWidth: 1200, margin: '0 auto', padding: '0 24px', height: 56, display: 'flex', alignItems: 'center', justifyContent: 'space-between' };
 const logoGroup: React.CSSProperties = { display: 'flex', alignItems: 'center', gap: 8, textDecoration: 'none' };
 const logoMark: React.CSSProperties = { width: 28, height: 28, objectFit: 'contain', display: 'block', borderRadius: 6, flexShrink: 0 };
-const logoText: React.CSSProperties = { fontFamily: 'var(--font-serif)', fontSize: 17, fontWeight: 700, color: 'var(--text)' };
+const logoText: React.CSSProperties = { fontFamily: 'var(--font-serif)', fontSize: 17, fontWeight: 700, color: 'var(--text-4)' };
 const logoSub: React.CSSProperties = { fontSize: 11, color: 'var(--text-3)', letterSpacing: '0.08em', textTransform: 'uppercase', marginLeft: -2 };
 const launchBtn: React.CSSProperties = { display: 'flex', alignItems: 'center', gap: 6, background: 'var(--gold)', color: '#000', border: 'none', padding: '8px 16px', borderRadius: 8, fontWeight: 600, fontSize: 13, cursor: 'pointer' };
 const hero: React.CSSProperties = { padding: '80px 24px 0', maxWidth: 1200, margin: '0 auto' };
@@ -297,12 +296,12 @@ const moverRow: React.CSSProperties = { display: 'flex', alignItems: 'center', g
 const featGrid: React.CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: 16 };
 const featCard: React.CSSProperties = { background: 'var(--surface-3)', border: '1px solid var(--border)', borderRadius: 12, padding: 20 };
 const featIcon: React.CSSProperties = { color: 'var(--gold)', marginBottom: 12, display: 'block' };
-const featTitle: React.CSSProperties = { fontWeight: 600, fontSize: 14, color: 'var(--text)', marginBottom: 6, marginTop: 0 };
-const featDesc: React.CSSProperties = { fontSize: 13, color: 'var(--text-3)', lineHeight: 1.6, margin: 0 };
+const featTitle: React.CSSProperties = { fontWeight: 600, fontSize: 14, color: 'var(--text-4)', marginBottom: 6, marginTop: 0 };
+const featDesc: React.CSSProperties = { fontSize: 13, color: '#bfd3ea', lineHeight: 1.6, margin: 0 };
 const newsGrid: React.CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 16 };
 const newsCard: React.CSSProperties = { background: 'var(--surface-2)', border: '1px solid var(--border)', borderRadius: 12, overflow: 'hidden', display: 'block', transition: 'border-color 0.15s' };
 const newsBody: React.CSSProperties = { padding: '12px 14px' };
-const newsTitle: React.CSSProperties = { fontSize: 13, fontWeight: 500, color: 'var(--text)', lineHeight: 1.5, marginTop: 0, marginBottom: 0 };
+const newsTitle: React.CSSProperties = { fontSize: 13, fontWeight: 500, color: '#8fb2d9', lineHeight: 1.5, marginTop: 0, marginBottom: 0 };
 const footerStyle: React.CSSProperties = { borderTop: '1px solid var(--border)', padding: '20px 24px', background: 'var(--surface-2)' };
 
 function statusPill(open: boolean): React.CSSProperties {

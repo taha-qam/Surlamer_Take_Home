@@ -131,14 +131,14 @@ export function WorkbenchPage() {
                 return (
                   <li key={entry.ticker}>
                     <button style={sidePortfolioRow} onClick={() => setSelectedTicker(entry.ticker)}>
-                      <span style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--text)', fontWeight: 500 }}>{entry.ticker}</span>
+                      <span style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--text-4)', fontWeight: 500 }}>{entry.ticker}</span>
                       <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: changeColor(chg) }}>{fmtPct(chg)}</span>
                     </button>
                   </li>
                 );
               })}
               {portfolio.length > 5 && (
-                <li style={{ fontSize: 11, color: 'var(--text-3)', padding: '4px 8px' }}>
+                <li style={{ fontSize: 11, color: 'var(--text-4)', padding: '4px 8px' }}>
                   +{portfolio.length - 5} more
                 </li>
               )}
@@ -274,7 +274,7 @@ export function WorkbenchPage() {
                   <span style={summaryDivider} aria-hidden />
                   <div style={summaryItem}>
                     <dt style={summaryLabel}>Aggregate Price Pts</dt>
-                    <dd style={{ fontFamily: 'var(--font-mono)', fontSize: 18, fontWeight: 500, color: 'var(--text)', margin: 0 }}>
+                    <dd style={{ fontFamily: 'var(--font-mono)', fontSize: 18, fontWeight: 500, color: 'var(--text-4)', margin: 0 }}>
                       ${portfolioValue.toFixed(2)}
                     </dd>
                   </div>
@@ -308,6 +308,9 @@ export function WorkbenchPage() {
                         const price = s ? extractPrice(s) : undefined;
                         const chg = s?.todaysChangePerc;
                         const isEditing = editingNotes === entry.ticker;
+                        const hasDistinctName =
+                          !!entry.name && entry.name.trim().toUpperCase() !== entry.ticker.toUpperCase();
+                        const primaryLabel = hasDistinctName ? entry.name : entry.ticker;
 
                         return (
                           <>
@@ -318,10 +321,24 @@ export function WorkbenchPage() {
                               aria-label={`${entry.ticker} — click to view details`}
                             >
                               <td style={tdTicker}>
-                                <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 500, fontSize: 13 }}>{entry.ticker}</span>
-                                {entry.name && <span style={{ fontSize: 11, color: 'var(--text-3)', display: 'block', marginTop: 1 }}>{entry.name}</span>}
+                                <span style={{ fontWeight: 600, fontSize: 13, color: 'var(--text-4)' }}>
+                                  {primaryLabel}
+                                </span>
+                                {hasDistinctName && (
+                                  <span
+                                    style={{
+                                      fontFamily: 'var(--font-mono)',
+                                      fontSize: 11,
+                                      color: 'var(--text-3)',
+                                      display: 'block',
+                                      marginTop: 1,
+                                    }}
+                                  >
+                                    {entry.ticker}
+                                  </span>
+                                )}
                               </td>
-                              <td style={{ ...tdCell, textAlign: 'right', fontFamily: 'var(--font-mono)', fontSize: 13 }}>
+                              <td style={{ ...tdCell, textAlign: 'right', fontFamily: 'var(--font-mono)', fontSize: 13, color: 'var(--text-4)' }}>
                                 {portfolioLoading
                                   ? <span className="skeleton" style={{ display: 'inline-block', width: 60, height: 16 }} aria-hidden />
                                   : fmtPrice(price)}
@@ -443,7 +460,7 @@ const badge: React.CSSProperties = { marginLeft: 'auto', background: 'var(--gold
 const sidePortfolioCard: React.CSSProperties = { margin: '12px', background: '#152844', border: '1px solid rgba(98, 130, 167, 0.35)', borderRadius: 10, padding: '12px' };
 const sidePortfolioLabel: React.CSSProperties = { fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#88a4c4', fontWeight: 600, margin: 0 };
 const sidePortfolioRow: React.CSSProperties = { display: 'flex', justifyContent: 'space-between', padding: '4px 6px', borderRadius: 5, cursor: 'pointer', width: '100%', background: 'transparent', border: 'none' };
-const viewPortfolioBtn: React.CSSProperties = { display: 'flex', alignItems: 'center', gap: 4, fontSize: 11, color: 'var(--gold)', background: 'transparent', border: 'none', cursor: 'pointer', marginTop: 8, padding: '4px 6px' };
+const viewPortfolioBtn: React.CSSProperties = { display: 'flex', alignItems: 'center', gap: 4, fontSize: 11, color: 'var(--text-4)', background: 'transparent', border: 'none', cursor: 'pointer', marginTop: 8, padding: '4px 6px' };
 
 const mainArea: React.CSSProperties = { flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden', background: '#0e1f35' };
 const topbar: React.CSSProperties = { padding: '12px 20px', borderBottom: '1px solid rgba(98, 130, 167, 0.35)', display: 'flex', alignItems: 'center', gap: 10, background: '#101f34', flexShrink: 0 };

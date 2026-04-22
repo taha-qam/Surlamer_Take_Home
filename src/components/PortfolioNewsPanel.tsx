@@ -109,7 +109,7 @@ const skeletonList: React.CSSProperties = {
   listStyle: 'none', padding: '12px 16px', margin: 0, display: 'flex', flexDirection: 'column', gap: 8,
 };
 const emptyMsg: React.CSSProperties = {
-  padding: '20px 16px', fontSize: 13, color: 'var(--text-3)', textAlign: 'center', margin: 0,
+  padding: '20px 16px', fontSize: 13, color: 'var(--text-4)', textAlign: 'center', margin: 0,
 };
 const newsList: React.CSSProperties = {
   listStyle: 'none', padding: 0, margin: 0,
@@ -120,10 +120,10 @@ const newsRow: React.CSSProperties = {
   textDecoration: 'none', transition: 'background 0.15s',
 };
 const newsTitle: React.CSSProperties = {
-  fontSize: 13, fontWeight: 500, color: 'var(--text)',
+  fontSize: 13, fontWeight: 500, color: 'var(--text-4)',
   lineHeight: 1.45, marginBottom: 4, marginTop: 0,
 };
 const newsMeta: React.CSSProperties = {
   display: 'flex', alignItems: 'center', gap: 5,
-  fontSize: 11, color: 'var(--text-3)',
+  fontSize: 11, color: 'var(--text-4)',
 };
